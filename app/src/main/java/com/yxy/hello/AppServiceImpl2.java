@@ -11,12 +11,12 @@ import com.yxy.structure.core.ServiceProvider;
 /**
  * AppService 的另外一个实现
  */
-@ServiceProvider("another")
+//@ServiceProvider("another")
 public class AppServiceImpl2 implements AppService {
 
   @Override
   public String callMethodSyncOfApp() {
-    return "AppServiceImpl2 callMethodSyncOfApp";
+    return "App service 222  的实现类文字返回";
   }
 
   @Override

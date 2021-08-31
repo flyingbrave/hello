@@ -21,7 +21,7 @@ public class AppServiceImpl implements AppService {
 
     @Override
     public String callMethodSyncOfApp() {
-        return "AppServiceImpl callMethodSyncOfApp";
+        return "App service 111  的实现类文字返回";
     }
 
     @Override

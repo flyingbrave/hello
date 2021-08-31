@@ -2,8 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.yxy.model1">
 
-    <application
-        android:name="Module1Application">
+    <application>
         <activity android:name=".Model1MainActivity"/>
 
 
