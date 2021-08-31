@@ -9,3 +9,4 @@
 rootProject.name = "Hello"
 include ':app'
 include ':plugin'
+include ':common'
