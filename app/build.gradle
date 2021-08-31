@@ -40,6 +40,8 @@ dependencies {
 
 
     implementation project(':common')
-
+    implementation project(':router')
+    implementation project(':model1')
+    implementation project(':model2')
 
 }

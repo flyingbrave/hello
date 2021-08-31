@@ -252,7 +252,7 @@ class AppJointTransform extends Transform {
          */
         void insertApplicationAdd(String applicationName) {
             mv.visitVarInsn(Opcodes.ALOAD, 0)
-            mv.visitFieldInsn(Opcodes.GETFIELD, "io/github/prototypez/appjoint/AppJoint", "moduleApplications", "Ljava/util/List;")
+            mv.visitFieldInsn(Opcodes.GETFIELD, "com/yxy/structure/AppJoint", "moduleApplications", "Ljava/util/List;")
             mv.visitTypeInsn(Opcodes.NEW, applicationName)
             mv.visitInsn(Opcodes.DUP)
             mv.visitMethodInsn(Opcodes.INVOKESPECIAL, applicationName, "<init>", "()V", false)
@@ -262,12 +262,12 @@ class AppJointTransform extends Transform {
 
       void insertRoutersPut(Tuple2<String, String> router, String impl) {
             mv.visitVarInsn(Opcodes.ALOAD, 0)
-        mv.visitFieldInsn(Opcodes.GETFIELD, "io/github/prototypez/appjoint/AppJoint", "routersMap",
-            "Lio/github/prototypez/appjoint/util/BinaryKeyMap;")
+        mv.visitFieldInsn(Opcodes.GETFIELD, "com/yxy/structure/AppJoint", "routersMap",
+            "Lcom/yxy/structure/util/BinaryKeyMap;")
         mv.visitLdcInsn(Type.getObjectType(router.first))
         mv.visitLdcInsn(router.second)
             mv.visitLdcInsn(Type.getObjectType(impl))
-        mv.visitMethodInsn(Opcodes.INVOKEVIRTUAL, "io/github/prototypez/appjoint/util/BinaryKeyMap",
+        mv.visitMethodInsn(Opcodes.INVOKEVIRTUAL, "com/yxy/structure/util/BinaryKeyMap",
             "put", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V", true)
         }
     }
@@ -376,14 +376,14 @@ class AppJointTransform extends Transform {
                 case Opcodes.LRETURN:
                 case Opcodes.DRETURN:
                 case Opcodes.RETURN:
-                    mv.visitMethodInsn(Opcodes.INVOKESTATIC, "io/github/prototypez/appjoint/AppJoint", "get", "()Lio/github/prototypez/appjoint/AppJoint;", false)
+                    mv.visitMethodInsn(Opcodes.INVOKESTATIC, "com/yxy/structure/AppJoint", "get", "()Lcom/yxy/structure/AppJoint;", false)
                     if (aLoad1) {
                         mv.visitVarInsn(Opcodes.ALOAD, 1)
                     }
                     if (iLoad1) {
                         mv.visitVarInsn(Opcodes.ILOAD, 1)
                     }
-                    mv.visitMethodInsn(Opcodes.INVOKEVIRTUAL, "io/github/prototypez/appjoint/AppJoint", name, desc, false)
+                    mv.visitMethodInsn(Opcodes.INVOKEVIRTUAL, "com/yxy/structure/AppJoint", name, desc, false)
                     break
             }
             super.visitInsn(opcode)
@@ -407,7 +407,7 @@ class AppJointTransform extends Transform {
             @Override
             void visit(int version, int access, String name, String signature, String superName, String[] interfaces) {
                 super.visit(version, access, name, signature, superName, interfaces)
-                if (name == "io/github/prototypez/appjoint/AppJoint") {
+                if (name == "com/yxy/structure/AppJoint") {
                     appJointClassFile = file
                     appJointOutputFile = outputFile
                     found = true
@@ -451,7 +451,7 @@ class AppJointTransform extends Transform {
             AnnotationVisitor visitAnnotation(String desc, boolean visible) {
                 mProject.logger.info("visiting $desc")
                 switch (desc) {
-                    case "Lio/github/prototypez/appjoint/core/ModuleSpec;":
+                    case "Lcom/yxy/structure/core/ModuleSpec;":
                       addModuleApplication(new AnnotationModuleSpec(cr.className))
                       return new AnnotationMethodsVisitor() {
                         @Override
@@ -465,11 +465,11 @@ class AppJointTransform extends Transform {
                           super.visit(name, value)
                         }
                       }
-                    case "Lio/github/prototypez/appjoint/core/AppSpec;":
+                    case "Lcom/yxy/structure/core/AppSpec;":
                         appApplications[file] = output
                         needsModification = true
                         break
-                    case "Lio/github/prototypez/appjoint/core/ServiceProvider;":
+                    case "Lcom/yxy/structure/core/ServiceProvider;":
                       return new AnnotationMethodsVisitor() {
 
                         boolean valueSpecified;
