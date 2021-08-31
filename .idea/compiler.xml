@@ -8,6 +8,7 @@
       <module name="Hello.independent.runmodel2" target="11" />
       <module name="Hello.model1" target="11" />
       <module name="Hello.model2" target="11" />
+      <module name="Hello.structure" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

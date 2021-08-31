@@ -86,7 +86,7 @@ class AppJointTransform extends Transform {
 
                 def jarName = jarInput.name
 
-                if (jarName == ":core") {
+                if (jarName == ":structure") {
                     // maybe stub in dev and handle them later
                     if (maybeStubs.size() == 0) {
                         maybeStubs.add(jarInput)

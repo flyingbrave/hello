@@ -18,6 +18,7 @@
             <option value="$PROJECT_DIR$/model1" />
             <option value="$PROJECT_DIR$/model2" />
             <option value="$PROJECT_DIR$/plugin" />
+            <option value="$PROJECT_DIR$/structure" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
