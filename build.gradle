@@ -4,6 +4,13 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        // 参考：https://maven.aliyun.com/mvn/guide
+        // 源：central仓和jcenter仓的聚合仓
+        maven { url 'https://maven.aliyun.com/repository/public'}
+        // 源：https://maven.google.com/
+        maven { url 'https://maven.aliyun.com/repository/google'}
+        // 源：https://plugins.gradle.org/m2/
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin'}
         maven { url 'https://jitpack.io' }
     }
     dependencies {

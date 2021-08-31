@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 
-//apply plugin: 'app-joint'
+apply plugin: 'app-joint'
 
 android {
     compileSdk 31
