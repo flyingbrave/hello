@@ -4,6 +4,8 @@
     <bytecodeTargetLevel target="1.7">
       <module name="Hello.app" target="11" />
       <module name="Hello.common" target="11" />
+      <module name="Hello.model1" target="11" />
+      <module name="Hello.model2" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

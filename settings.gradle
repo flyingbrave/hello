@@ -10,3 +10,5 @@ rootProject.name = "Hello"
 include ':app'
 include ':plugin'
 include ':common'
+include ':model1'
+include ':model2'
