@@ -35,3 +35,14 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.runingWoniu'
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        //JitPack插件
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+    }
+}
