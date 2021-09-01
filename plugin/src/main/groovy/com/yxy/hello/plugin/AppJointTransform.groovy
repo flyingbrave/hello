@@ -43,6 +43,7 @@ class AppJointTransform extends Transform {
 
   AppJointTransform(Project project) {
         mProject = project
+      println("AppJointTransform init")
     }
 
     @Override
@@ -87,24 +88,28 @@ class AppJointTransform extends Transform {
                 def jarName = jarInput.name
 
                 if (jarName == ":structure") {
+                    println("deal structure code ")
                     // maybe stub in dev and handle them later
                     if (maybeStubs.size() == 0) {
                         maybeStubs.add(jarInput)
                     }
-                    // maybe submodule, ':core' could be user's business module
+                    // maybe submodule, ':structure' could be user's business module
                     maybeModules.add(jarInput)
                 } else if (jarName.startsWith(":")) {
                     // maybe submodule
+                    println("deal submodule code ")
                     maybeModules.add(jarInput)
                 } else if (jarName.startsWith("io.github.prototypez:app-joint-core")) {
                     // find the stub
                     maybeStubs.clear()
                     maybeStubs.add(jarInput)
+                    println("deal submodule aar code ")
                 } else {
                     // normal jars, just copy it to destination
                     def dest = transformInvocation.outputProvider.getContentLocation(jarName, jarInput.contentTypes, jarInput.scopes, Format.JAR)
                     mProject.logger.info("jar output path:" + dest.getAbsolutePath())
                     FileUtils.copyFile(jarInput.file, dest)
+                    println("deal normal jars code ")
                 }
             }
 
@@ -174,7 +179,7 @@ class AppJointTransform extends Transform {
 //            throw new RuntimeException("AppJoint class file not found, please check \"io.github.prototypez:app-joint-core:{latest_version}\" is in your dependency graph.")
             return
         }
-
+        println("Insert code to AppJoint class")
         // Insert code to AppJoint class
         def inputStream = new FileInputStream(appJointClassFile)
         ClassReader cr = new ClassReader(inputStream)
