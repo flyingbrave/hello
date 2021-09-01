@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.res.Configuration;
+import android.util.Log;
 
 import com.yxy.structure.util.BinaryKeyMap;
 
@@ -107,6 +108,7 @@ public class AppJoint {
         return softRouterInstanceMap.get();
     }
 
+    //通过字节码操作，将ServiceProvider注解标记的类添加到这个map中去
     public BinaryKeyMap<Class, String, Class> routersMap() {
         return routersMap;
     }

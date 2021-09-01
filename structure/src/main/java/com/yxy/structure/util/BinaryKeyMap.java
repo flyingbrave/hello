@@ -13,6 +13,7 @@ public class BinaryKeyMap<K1, K2, V> {
             innerMap = new HashMap<>();
             map.put(key1, innerMap);
         }
+        //同一个service可以有不同的实现类，比如@ServiceProvider("another")注解
         innerMap.put(key2, value);
     }
 

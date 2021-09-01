@@ -11,7 +11,7 @@ import com.yxy.structure.core.ServiceProvider;
 /**
  * AppService 的另外一个实现
  */
-//@ServiceProvider("another")
+@ServiceProvider("another")
 public class AppServiceImpl2 implements AppService {
 
   @Override
