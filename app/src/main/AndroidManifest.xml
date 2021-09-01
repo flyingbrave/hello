@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hello">
         <activity android:name="com.yxy.hello.MainActivity"
-            tools:ignore="IntentFilterExportedReceiver">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

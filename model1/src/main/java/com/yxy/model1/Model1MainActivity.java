@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -18,13 +19,22 @@ public class Model1MainActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_model1);
-       final String aaa= Services.sAppService.callMethodSyncOfApp();
-        new Handler().postDelayed(new Runnable() {
+        findViewById(R.id.text).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void run() {
+            public void onClick(View view) {
+                final String aaa= Services.sAppService.callMethodSyncOfApp();
                 Toast.makeText(Model1MainActivity.this, ""+aaa, Toast.LENGTH_SHORT).show();
             }
-        },3000);
+        });
+
+        findViewById(R.id.text2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String aaa= Services.sModule2Service.callMethodSyncOfModule2();
+                Toast.makeText(Model1MainActivity.this, ""+aaa, Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     public static void jump(Context context){

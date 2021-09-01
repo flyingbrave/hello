@@ -18,5 +18,7 @@ public interface Module2Service {
      */
     String callMethodSyncOfModule2();
 
+    void jump2Mode2MainActivity(Context context);
+
 
 }

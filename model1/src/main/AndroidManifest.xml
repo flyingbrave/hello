@@ -5,6 +5,5 @@
     <application>
         <activity android:name=".Model1MainActivity"/>
 
-
     </application>
 </manifest>

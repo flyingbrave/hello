@@ -10,7 +10,7 @@
         android:id="@+id/mytv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="model 1 independent"
+        android:text="model 1 independent 点击跳转"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
