@@ -99,7 +99,7 @@ class AppJointTransform extends Transform {
                     // maybe submodule
                     println("deal submodule code ")
                     maybeModules.add(jarInput)
-                } else if (jarName.startsWith("io.github.prototypez:app-joint-core")) {
+                } else if (jarName.startsWith("com.github.runingWoniu:codedesign")) {
                     // find the stub
                     maybeStubs.clear()
                     maybeStubs.add(jarInput)
