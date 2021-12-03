@@ -18,3 +18,5 @@ apply plugin: 'app-joint'
 
 
 api 'com.github.runingWoniu:codedesign:1.0.1'
+
+掘金地址：https://juejin.cn/post/7002920669323198478
